@@ -11,17 +11,20 @@ const NavLinks = ({ className = '', onLinkClick }) => {
           const isActive = location.pathname === link.path;
           return (
             <li key={link.path}>
-              <Link
-                to={link.path}
-                onClick={onLinkClick}
-                className={`text-base font-medium transition-colors duration-200 ${
-                  isActive
-                    ? 'text-teal-700 border-b-2 border-teal-700 pb-1'
-                    : 'text-gray-700 hover:text-teal-700'
-                }`}
+              <a
+                href={link.path}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(link.path);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    if (onLinkClick) onLinkClick();
+                  }
+                }}
+                className="text-base font-medium text-gray-700 hover:text-teal-700 transition-colors duration-200 cursor-pointer"
               >
                 {link.label}
-              </Link>
+              </a>
             </li>
           );
         })}

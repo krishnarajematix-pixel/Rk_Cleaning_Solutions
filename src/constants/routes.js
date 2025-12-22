@@ -1,9 +1,9 @@
 export const ROUTES = {
-  HOME: '/',
-  ABOUT: '/about',
-  SERVICES: '/services',
-  GALLERY: '/gallery',
-  CONTACT: '/contact'
+  HOME: '#home',
+  ABOUT: '#about',
+  SERVICES: '#services',
+  GALLERY: '#gallery',
+  CONTACT: '#contact'
 };
 
 export const NAV_LINKS = [
