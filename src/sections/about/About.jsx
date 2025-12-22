@@ -22,7 +22,7 @@ const About = () => {
           <div className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <img
-                src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFteGV4ZGdnNnlpdTF1eThteXNrMnZ5ZTdzZnJ5ZjFjcGthZHBzZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UpDVgqOeUTdl414hUY/giphy.gif"
+                src="https://discovertemplate.com/wp-content/uploads/2023/02/General-house-cleaning-service_600.gif"
                 alt="Professional Cleaning Team"
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />
