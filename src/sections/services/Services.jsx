@@ -25,6 +25,9 @@ const Services = () => {
               specialized tank cleaning to full home restoration, explore our
               comprehensive service list below.
             </p>
+            <p className="mt-4 text-sm font-medium text-orange-600 bg-orange-50 px-4 py-2 rounded-lg inline-block">
+              Note: Fuel expenses charged for service above 20km from Gorimedu, Salem.
+            </p>
           </div>
 
           {/* Services Grid */}
@@ -41,15 +44,15 @@ const Services = () => {
       </section>
 
       {/* Pricing Section */}
-      <PricingTable />
+      {/* <PricingTable /> */}
 
       {/* Modal */}
-      {selectedService && (
+      {/* {selectedService && (
         <ServiceCategory
           service={selectedService}
           onClose={() => setSelectedService(null)}
         />
-      )}
+      )} */}
     </>
   );
 };

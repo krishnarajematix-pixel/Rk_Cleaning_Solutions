@@ -7,7 +7,7 @@ import Button from '../../components/ui/Button.jsx';
 const HeroOverlay = () => {
   return (
     <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center items-center md:items-start text-center md:text-left pt-20">
-      
+
       {/* Badge */}
       <div className="inline-block px-4 py-1 mb-6 border border-white/30 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium tracking-wider animate-fade-in-up">
         Professional Cleaning Services in Salem
@@ -27,12 +27,12 @@ const HeroOverlay = () => {
       {/* Contact Details Grid (Desktop) */}
       <div className="hidden md:flex gap-6 mb-8 text-white/90 animate-fade-in-up delay-300">
         <div className="flex items-center gap-2">
-           <Phone size={18} className="text-orange-500" />
-           <span>{CONTACT_DATA.displayPhone}</span>
+          <Phone size={18} className="text-orange-500" />
+          <span>{CONTACT_DATA.displayPhone}</span>
         </div>
         <div className="flex items-center gap-2">
-           <MapPin size={18} className="text-orange-500" />
-           <span>{CONTACT_DATA.address.area}, {CONTACT_DATA.address.city}</span>
+          <MapPin size={18} className="text-orange-500" />
+          <span>{CONTACT_DATA.address.area}, {CONTACT_DATA.address.city}</span>
         </div>
       </div>
 
@@ -43,11 +43,18 @@ const HeroOverlay = () => {
             Book via WhatsApp
           </Button>
         </a>
-        <Link to="/services">
+        <a
+          href="#services"
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.querySelector('#services');
+            if (element) element.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           <Button variant="outline" className="w-full sm:w-auto h-12 px-8 border-white text-white hover:bg-white hover:text-gray-900">
             Explore Services
           </Button>
-        </Link>
+        </a>
       </div>
     </div>
   );

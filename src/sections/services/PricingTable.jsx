@@ -55,17 +55,11 @@ const PricingTable = () => {
   return (
     <div className="py-20 bg-gray-50 border-t border-gray-200">
       <div className="container mx-auto px-4">
-        
+
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-orange-500 font-bold tracking-widest uppercase text-sm">
-            Transparent Pricing
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-            Complete Rate Card
-          </h2>
           <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            No hidden charges. Professional service at standard market rates. 
+            No hidden charges. Professional service at standard market rates.
             Prices may vary slightly based on inspection and stain condition.
           </p>
         </div>
@@ -74,7 +68,7 @@ const PricingTable = () => {
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {pricingCategories.map(([key, data]) => (
             <div key={key} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow flex flex-col">
-              
+
               {/* Card Header */}
               <div className="bg-teal-50 px-6 py-4 border-b border-teal-100 flex justify-between items-center">
                 <h3 className="font-bold text-teal-800 capitalize text-lg">
