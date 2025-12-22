@@ -17,6 +17,8 @@ const getServiceImage = (id) =>
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
     appliances:
       "http://kingscleaningco.com.au/cdn/shop/articles/dw.webp?v=1723168248",
+    furniture:
+      "http://kingscleaningco.com.au/cdn/shop/articles/dw.webp?v=1723168248",
     commercial:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
     pipeline:

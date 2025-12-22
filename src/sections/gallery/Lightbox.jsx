@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Play } from 'lucide-react';
 
-const Lightbox = ({ isOpen, item, onClose, onNext, onPrev }) => {
+const Lightbox = ({ item, isOpen, onClose, onNext, onPrev }) => {
+  // Lock body scroll when lightbox is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -14,87 +14,75 @@ const Lightbox = ({ isOpen, item, onClose, onNext, onPrev }) => {
     };
   }, [isOpen]);
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (!isOpen) return;
-      if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft') onPrev();
-      if (e.key === 'ArrowRight') onNext();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, onClose, onNext, onPrev]);
-
   if (!isOpen || !item) return null;
 
   const isVideo = !!item.youtubeId;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/95 backdrop-blur-sm"
-        onClick={onClose}
-      />
-
+    <div
+      onClick={() => onClose && onClose()}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm animate-in fade-in duration-200"
+    >
+      
       {/* Close Button */}
       <button
-        onClick={onClose}
-        className="absolute top-4 right-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
+        onClick={(e) => { e.stopPropagation(); onClose && onClose(); }}
+        className="absolute top-4 right-4 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all z-60"
         aria-label="Close lightbox"
       >
-        <X size={24} />
+        <X size={32} />
       </button>
 
-      {/* Navigation Buttons */}
-      <button
-        onClick={onPrev}
-        className="absolute left-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
-        aria-label="Previous"
+      {/* Navigation - Left */}
+      <button 
+        onClick={(e) => { e.stopPropagation(); onPrev(); }}
+        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all hidden md:block"
       >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        onClick={onNext}
-        className="absolute right-4 z-10 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors"
-        aria-label="Next"
-      >
-        <ChevronRight size={24} />
+        <ChevronLeft size={40} />
       </button>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl w-full max-h-[90vh] flex items-center justify-center">
-        {isVideo ? (
-          <div className="w-full aspect-video">
-            <iframe
-              src={`https://www.youtube.com/embed/${item.youtubeId}?autoplay=1`}
-              className="w-full h-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title={item.title || 'Video'}
+      {/* Content Container */}
+      <div onClick={(e) => e.stopPropagation()} className="w-full h-full flex flex-col items-center justify-center p-4 md:p-10">
+        <div className="relative w-full max-w-5xl max-h-[80vh] flex items-center justify-center">
+          
+          {isVideo ? (
+            <div className="aspect-video w-full h-full bg-black rounded-lg overflow-hidden shadow-2xl">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src={`https://www.youtube.com/embed/${item.youtubeId}?autoplay=1`} 
+                title={item.title} 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+            </div>
+          ) : (
+            <img 
+              src={item.src} 
+              alt={item.alt} 
+              className="max-w-full max-h-[80vh] object-contain rounded-md shadow-2xl"
             />
-          </div>
-        ) : (
-          <img
-            src={item.src || item.thumbnail || 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1200'}
-            alt={item.alt || item.title || 'Gallery image'}
-            className="max-w-full max-h-[90vh] object-contain rounded-lg"
-          />
-        )}
+          )}
+        </div>
 
         {/* Caption */}
-        {(item.alt || item.title) && (
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 backdrop-blur-sm px-6 py-3 rounded-lg text-white text-center max-w-2xl">
-            <p className="font-semibold">{item.title || item.alt}</p>
-            {item.description && (
-              <p className="text-sm text-gray-300 mt-1">{item.description}</p>
-            )}
-          </div>
-        )}
+        <div className="mt-6 text-center">
+          <h3 className="text-xl font-bold text-white">{isVideo ? item.title : item.caption}</h3>
+          <p className="text-white/60 text-sm mt-1 uppercase tracking-widest">{isVideo ? 'Video' : item.category}</p>
+        </div>
       </div>
+
+      {/* Navigation - Right */}
+      <button 
+        onClick={(e) => { e.stopPropagation(); onNext(); }}
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all hidden md:block"
+      >
+        <ChevronRight size={40} />
+      </button>
+
     </div>
   );
 };
 
 export default Lightbox;
-
