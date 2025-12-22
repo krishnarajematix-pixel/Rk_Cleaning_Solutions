@@ -17,17 +17,17 @@ const About = () => {
 
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
+
           {/* Left Column: Image Composition */}
           <div className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-              <img 
-                src="https://media.tenor.com/images/7b7fc2c53c017eb33c6cd04358c8f60f/tenor.gif" 
-                alt="Professional Cleaning Team" 
+              <img
+                src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFteGV4ZGdnNnlpdTF1eThteXNrMnZ5ZTdzZnJ5ZjFjcGthZHBzZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UpDVgqOeUTdl414hUY/giphy.gif"
+                alt="Professional Cleaning Team"
                 className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
               />
             </div>
-            
+
             {/* Experience Badge */}
             <div className="absolute -bottom-6 -right-6 md:-right-10 bg-teal-700 text-white p-6 md:p-8 rounded-xl shadow-xl z-20 animate-fade-in-up">
               <div className="flex items-baseline gap-1">
@@ -57,7 +57,7 @@ const About = () => {
               <Award size={14} />
               <span>Who We Are</span>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               Setting the Standard for <br />
               <span className="text-teal-700">Hygiene & Cleanliness</span>
@@ -80,26 +80,26 @@ const About = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 border-t border-gray-100 pt-8">
               <div className="flex items-center gap-4">
-                 <div className="p-3 bg-teal-50 rounded-lg text-teal-700">
-                    <Users size={24} />
-                 </div>
-                 <div>
-                    <div className="font-bold text-gray-900">Expert Team</div>
-                    <div className="text-sm text-gray-500">Trained Professionals</div>
-                 </div>
+                <div className="p-3 bg-teal-50 rounded-lg text-teal-700">
+                  <Users size={24} />
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">Expert Team</div>
+                  <div className="text-sm text-gray-500">Trained Professionals</div>
+                </div>
               </div>
               <div className="w-px h-12 bg-gray-200 hidden sm:block" />
               <div className="flex items-center gap-4">
-                 <div className="p-3 bg-orange-50 rounded-lg text-orange-600">
-                    <Clock size={24} />
-                 </div>
-                 <div>
-                    <div className="font-bold text-gray-900">Fast Service</div>
-                    <div className="text-sm text-gray-500">On-Time Completion</div>
-                 </div>
+                <div className="p-3 bg-orange-50 rounded-lg text-orange-600">
+                  <Clock size={24} />
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">Fast Service</div>
+                  <div className="text-sm text-gray-500">On-Time Completion</div>
+                </div>
               </div>
             </div>
-            
+
             <div className="mt-8">
               <Button variant="outline" className="mr-4">Read Our Story</Button>
             </div>
