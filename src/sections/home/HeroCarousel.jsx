@@ -5,7 +5,7 @@ const HeroCarousel = ({ images = [] }) => {
 
   // Default images if none provided
   const defaultImages = [
-    'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1920',
+    '/assets/images/hero/hero.png',
     'https://www.pluspoint.ae/uploads/Blogs/blog_1719835208.webp',
     'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&q=80&w=1920'
   ];
@@ -25,9 +25,8 @@ const HeroCarousel = ({ images = [] }) => {
       {carouselImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <img
             src={typeof image === 'string' ? image : image.src}

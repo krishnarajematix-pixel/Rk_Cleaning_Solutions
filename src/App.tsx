@@ -3,6 +3,7 @@ import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
 import WhatsAppCTA from './components/shared/WhatsAppCTA.jsx'
 import Home from './sections/home/Home.jsx'
+import SocialSeparator from './sections/home/SocialSeparator.jsx'
 import About from './sections/about/About.jsx'
 import Services from './sections/services/Services.jsx'
 import Gallery from './sections/gallery/Gallery.jsx'
@@ -13,6 +14,7 @@ import './styles/index.css'
 const FullPage = () => (
   <main>
     <Home />
+    <SocialSeparator />
     <About />
     <Services />
     <Gallery />
