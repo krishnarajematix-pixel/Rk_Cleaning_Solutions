@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SERVICES_DATA } from "../../data/services.data.js";
 import ServiceCard from "./ServiceCard.jsx";
 import ServiceCategory from "./ServiceCategory.jsx";
-import PricingTable from "./PricingTable.jsx";
+// import PricingTable from "./PricingTable.jsx";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -47,12 +47,12 @@ const Services = () => {
       {/* <PricingTable /> */}
 
       {/* Modal */}
-      {/* {selectedService && (
+      {selectedService && (
         <ServiceCategory
           service={selectedService}
           onClose={() => setSelectedService(null)}
         />
-      )} */}
+      )}
     </>
   );
 };

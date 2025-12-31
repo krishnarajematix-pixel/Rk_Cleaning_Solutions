@@ -4,28 +4,28 @@ import { ArrowRight } from "lucide-react";
 /* -------------------- IMAGE RESOLVER -------------------- */
 
 const getServiceImage = (id) =>
-  ({
-    bathroom:
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800",
-    kitchen:
-      "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800",
-    floor:
-      "https://5.imimg.com/data5/SELLER/Default/2022/2/PO/AG/FK/22127902/office-floor-cleaning-services-500x500.png",
-    tank:
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&q=80&w=800",
-    sofa:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
-    appliances:
-      "http://kingscleaningco.com.au/cdn/shop/articles/dw.webp?v=1723168248",
-    furniture:
-      "http://kingscleaningco.com.au/cdn/shop/articles/dw.webp?v=1723168248",
-    commercial:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
-    pipeline:
-      "https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&q=80&w=800",
-    pest:
-      "https://images.unsplash.com/photo-1587574293340-e0011c4e8ecf?auto=format&fit=crop&q=80&w=800",
-  }[id] ||
+({
+  bathroom:
+    "https://app.dropinblog.com/uploaded/blogs/34246798/files/How_to_Clean_Bathroom_Tiles_for_a_Unique_Look_.png",
+  kitchen:
+    "https://www.homeprouae.ae/wp-content/uploads/2020/03/homepro-deepcleaning.jpg",
+  floor:
+    "https://tse3.mm.bing.net/th/id/OIP.YqKfwb4Td3qUVtIvV_dPGwHaEK?pid=Api&P=0&h=180",
+  tank:
+    "https://www.fixomes.com/images/overheadtank.webp",
+  sofa:
+    "https://digishiftindia.in/wp-content/uploads/2021/02/home-deep-cleaning-services-in-delhi.jpg",
+  appliances:
+    "https://www.manmachinesolutions.com/wp-content/uploads/2014/08/DSC8558.jpg",
+  furniture:
+    "http://kingscleaningco.com.au/cdn/shop/articles/dw.webp?v=1723168248",
+  commercial:
+    "https://5.imimg.com/data5/SELLER/Default/2024/6/431136270/UY/ZR/QO/218567275/158-500x500.png",
+  pipeline:
+    "https://lirp.cdn-website.com/6bc73417/dms3rep/multi/opt/iStock-1417348764-1920w.jpg",
+  pest:
+    "https://indianpestcareservices.com/images/s2.jpg",
+}[id] ||
   "https://images.unsplash.com/photo-1581578731117-104f2a41272c?auto=format&fit=crop&q=80&w=800");
 
 /* -------------------- COMPONENT -------------------- */
